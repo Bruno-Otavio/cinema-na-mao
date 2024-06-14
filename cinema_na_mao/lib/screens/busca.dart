@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:cinema_na_mao/auth/secrets.dart';
 
 class BuscaPage extends StatelessWidget {
   const BuscaPage({super.key});
