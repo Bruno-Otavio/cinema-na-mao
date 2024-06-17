@@ -4,12 +4,14 @@ class FilmeWidget extends StatelessWidget {
   final String image;
   final String title;
   final String rating;
+  final String type;
 
   const FilmeWidget({
     super.key,
     required this.image,
     required this.title,
-    required this.rating,
+    this.rating = '',
+    this.type = 'asset',
   });
 
   @override
@@ -34,10 +36,15 @@ class FilmeWidget extends StatelessWidget {
                 topLeft: Radius.circular(10),
                 bottomLeft: Radius.circular(10)
               ),
-              child: Image.asset(
-                image,
-                width: 100,
-              ),
+              child: type == 'network' ? 
+                Image.network(
+                  image,
+                  width: 100,
+                ) :
+                Image.asset(
+                  image,
+                  width: 100,
+                )
             ),
     
             const SizedBox(width: 25,),
